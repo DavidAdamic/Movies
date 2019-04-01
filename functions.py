@@ -21,7 +21,6 @@ def get_list(string):
             tab.append(el)
     return tab
 
-
 def get_data(title):
     """function will gather movie data from site OMDb API using
     given title and your own api key"""
@@ -84,9 +83,6 @@ def combine_genres(list1, list2, list3):
             genres[el3] = 1
     return genres
 
-
-
-
 def combine_data(foo, bar, baz):
     """function combines 3 lists of movie datas"""
     combined = []
@@ -136,15 +132,27 @@ def combine_data(foo, bar, baz):
     combined.append(writers)
 
     actors = set()
-    actors.update(foo[6])
-    actors.update(bar[6])
-    actors.update(baz[6])
+    for ac1 in foo[6]:
+        if ac1 == 'N/A':
+            break
+        actors.add(ac1)
+    for ac2 in bar[6]:
+        if ac2 == 'N/A':
+            break
+        actors.add(ac2)
+    for ac3 in baz[6]:
+        if ac3 == 'N/A':
+            break
+        actors.add(ac3)
     combined.append(actors)
 
     productions = set()
-    productions.add(foo[7])
-    productions.add(bar[7])
-    productions.add(baz[7])
+    if foo[7] != 'N/A':
+        productions.add(foo[7])
+    if bar[7] != 'N/A':
+        productions.add(bar[7])
+    if baz[7] != 'N/A':
+        productions.add(baz[7])
     combined.append(productions)
 
     # plots don't matter in movie data comparing
