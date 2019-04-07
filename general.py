@@ -19,7 +19,7 @@ while data1 is None:
         print('Vašega filma ne moremo najti! Prosimo preverite črkovanje ali pa vnesite drug film')
         pass
 if resp == 'DA':
-    print(present_data(data1))
+    present_data(data1)
 
 data2 = None
 while data2 is None:
@@ -30,7 +30,7 @@ while data2 is None:
         print('Vašega filma ne moremo najti! Prosimo preverite črkovanje ali pa vnesite drug film')
         pass
 if resp == 'DA':
-    print(present_data(data2))
+    present_data(data2)
 
 data3 = None
 while data3 is None:
@@ -41,7 +41,7 @@ while data3 is None:
         print('Vašega filma ne moremo najti! Prosimo preverite črkovanje ali pa vnesite drug film')
         pass
 if resp == 'DA':
-    print(present_data(data3))
+    present_data(data3)
 
 combined = combine_data(data1, data2, data3)
 
